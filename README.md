@@ -34,7 +34,7 @@ cat ~/glucose.txt
 #### Set up your shell to display the Blood Glucose info
 Add the following line to your .zshrc file, make sure to reload it afterwards
 ```bash
-RPROMPT="BG: $(cat ~/glucose.txt | awk {'print $1,$2'}) [%D{%y/%m/%f}|%@]"
+RPROMPT='$( echo "BG: " )$( cat ~/glucose.txt ) [%D{%m/%f/%y}|%@]'
 ```
 Basically, all we are doing is catting the glucose file, which gives us access to the most recent data, without having to do a curl call!
 
